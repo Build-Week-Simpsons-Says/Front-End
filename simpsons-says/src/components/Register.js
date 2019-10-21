@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../styling/Register.scss'
 
 const Register = () => {
 
@@ -23,12 +24,12 @@ const Register = () => {
       <div className="register-screen">
         <div className="register-form-container">
 
-        <h2 className="register-form-title">Simpsons Says Registration</h2>
+        <h1 >Simpsons Says</h1>
 
             {/* add onSubmit to form */}
           <form  className="register-form">
 
-
+              <h2 className="register-form-title">Registration</h2>
               <input 
               onChange={handleChange}
               name="first_name"
@@ -36,7 +37,7 @@ const Register = () => {
               type="text"  
               value = {newUserInfo.first_name}          
               required
-              />
+              /> <br />
               <input 
               onChange={handleChange}
               name="last_name"
@@ -45,15 +46,15 @@ const Register = () => {
               value = {newUserInfo.last_name}      
               required
               />     
-
+              <br />
               <input 
               onChange={handleChange}
               name="email"
-              placeholder="Desired Email"
+              placeholder="Email"
               type="email"
             //   value = 
               required
-              />
+              /><br />
               <input 
               onChange={handleChange}
               name="password"
@@ -62,13 +63,14 @@ const Register = () => {
               value = {newUserInfo.email}
               required
               />
-
+              <br />
             <button>Sign Up</button>
-          </form>
-
-          <div className="login-description">
+            <div className="login-description">
             <p>Already have an account? Login <Link to='/'>Here</Link></p>
           </div>
+          </form>
+         
+          
 
 
         </div>
