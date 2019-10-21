@@ -34,15 +34,15 @@ const Register = () => {
               name="first_name"
               placeholder="First Name"
               type="text"  
-            //   value =          
+              value = {newUserInfo.first_name}          
               required
               />
               <input 
-            //   onChange=
+              onChange={handleChange}
               name="last_name"
               placeholder="Last Name"
               type="text"   
-            //   value =         
+              value = {newUserInfo.last_name}      
               required
               />     
 
@@ -59,7 +59,7 @@ const Register = () => {
               name="password"
               placeholder="Desired Password"
               type="password"
-            //   value = 
+              value = {newUserInfo.email}
               required
               />
 
