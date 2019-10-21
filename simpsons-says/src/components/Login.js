@@ -29,6 +29,7 @@ const Login = (props) => {
 
         {/* add on submit for form */}
         <form  className="login-form">
+            <h2>Login</h2>
           <input 
         //   onChange={handleChange}
           className="input-email"
