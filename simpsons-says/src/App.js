@@ -1,13 +1,25 @@
-import React from 'react';
-
-import './App.css';
+import React, { useState } from "react"
+// import reactDOM from "react-dom"
+import Quotes from "./components/Quotes"
+import SavedQuotes from "./components/SavedQuotes"
+import data from "./data"
+import "./App.css"
 
 function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+    const [quotes, setQuotes] = useState(data)
+
+    const addNewQuote = quote => {
+        setQuotes([...quotes, quote])
+    }
+    // passing the quotes down to our SavedQuotes with the above const
+
+    return (
+        <div className='App'>
+            <h1>My Favorite Quotes</h1>
+            <SavedQuotes addNewQuote={addNewQuote} />
+            <Quotes Quotes={quotes} />
+        </div>
+    )
 }
 
-export default App;
+export default App
