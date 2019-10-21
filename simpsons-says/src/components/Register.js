@@ -50,7 +50,7 @@ const Register = () => {
               <input 
               onChange={handleChange}
               name="email"
-              placeholder="Desired Email"
+              placeholder="Email"
               type="email"
             //   value = 
               required
