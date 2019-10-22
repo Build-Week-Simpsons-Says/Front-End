@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const SavedQuotes = props => {
+const SearchQuotes = props => {
     const [quote, setQuote] = useState({
         title: "",
         body: "",
@@ -43,4 +43,4 @@ const SavedQuotes = props => {
     )
 }
 
-export default SavedQuotes
+export default SearchQuotes

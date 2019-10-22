@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-// import reactDOM from "react-dom"
+import "react-router-dom"
 import Quotes from "./components/Quotes"
-import SavedQuotes from "./components/SavedQuotes"
+import SearchQuotes from "./components/SearchQuotes"
 import data from "./data"
 import "./App.css"
 
@@ -16,7 +16,7 @@ function App() {
     return (
         <div className='App'>
             <h1>My Favorite Quotes</h1>
-            <SavedQuotes addNewQuote={addNewQuote} />
+            <SearchQuotes addNewQuote={addNewQuote} />
             <Quotes Quotes={quotes} />
         </div>
     )
