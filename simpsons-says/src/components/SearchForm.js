@@ -1,15 +1,16 @@
 import React from "react"
+import { Button, Form, Label, Input } from "reactstrap"
 
 export default function SearchForm(props) {
     return (
-        <form className='search-form'>
-            <input
+        <Form className='search-form'>
+            <Input
                 type='text'
                 onChange={props.handleInputChange}
                 placeholder='search for your favorite quote'
                 autoComplete='off'
                 value={props.query}
             />
-        </form>
+        </Form>
     )
 }

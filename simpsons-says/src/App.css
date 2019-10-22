@@ -2,24 +2,6 @@
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #09d3ac;
-}
 html {
     height: 100%;
     box-sizing: border-box;
@@ -67,4 +49,39 @@ ol {
     font-size: 1.6rem;
     color: #000000;
     padding-bottom: 10px;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fed90f;
+    font-size: 4rem;
+}
+
+header {
+    font-family: "Rock Salt", cursive;
+    color: #ffd90f;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.card {
+    height: 200px;
+    padding: 15px;
+    text-align: center;
+}
+.search-form {
+    margin: 20px auto;
+    width: 200px;
+}
+
+.save-quote {
+    margin: 10px auto;
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import "./App.css"
+import SimpsonsWelcome from "./components/SimpsonsWelcome"
 import CharacterList from "./components/CharacterList"
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     </ul>
                 </nav>
                 <Switch>
+                    <Route exact path='/' component={SimpsonsWelcome} />
                     <Route path='/characterlist' component={CharacterList} />
                 </Switch>
             </div>
