@@ -1,24 +1,27 @@
-import React, { useState } from "react"
-import "react-router-dom"
-import Quotes from "./components/Quotes"
-import SearchQuotes from "./components/SearchQuotes"
-import data from "./data"
+import React from "react"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import "./App.css"
+import CharacterList from "./components/CharacterList"
 
 function App() {
-    const [quotes, setQuotes] = useState(data)
-
-    const addNewQuote = quote => {
-        setQuotes([...quotes, quote])
-    }
-    // passing the quotes down to our SavedQuotes with the above const
-
     return (
-        <div className='App'>
-            <h1>My Favorite Quotes</h1>
-            <SearchQuotes addNewQuote={addNewQuote} />
-            <Quotes Quotes={quotes} />
-        </div>
+        <Router>
+            <div>
+                <nav className='main-nav'>
+                    <ul>
+                        <li>
+                            <Link to='/'>Home</Link>
+                        </li>
+                        <li>
+                            <Link to='/characterlist'>Search Quotes</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Switch>
+                    <Route path='/characterlist' component={CharacterList} />
+                </Switch>
+            </div>
+        </Router>
     )
 }
 

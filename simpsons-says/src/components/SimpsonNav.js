@@ -1,7 +1,7 @@
 import React from "react"
-import { Nav, NavBar } from "reactstrap"
+import { Nav, Navbar } from "reactstrap"
 
-function NavBar() {
+function SimpsonNav() {
     return (
         <Navbar bg='light' expand='lg'>
             <Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
@@ -16,4 +16,4 @@ function NavBar() {
         </Navbar>
     )
 }
-export default NavBar
+export default SimpsonNav
