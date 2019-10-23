@@ -1,4 +1,5 @@
 import React from "react"
+import Woohoo from '../Images/homerSimpsonExcited.jpg'
 
 export default function SimpsonsWelcome() {
     return (
@@ -7,7 +8,7 @@ export default function SimpsonsWelcome() {
                 <h1>Welcome to the ultimate Simpsons fan site!</h1>
                 <img
                     className='main-img'
-                    src='C:\Users\tmartin2\Documents\Lambda Github\Front-End\simpsons-says\src\Images\homerSimpsonExcited.jpg'
+                    src={Woohoo}
                     alt='woohoo'
                 />
             </header>
