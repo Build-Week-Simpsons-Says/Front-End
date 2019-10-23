@@ -1,12 +1,18 @@
-//authentication
-import axios from "axios";
+import axios from 'axios'
 
-export const axiosWithAuth = () => {
-  const token = localStorage.getItem("token");
+export const axiosWithAuth = ()=> {
+  const token = localStorage.getItem('token');
+  return axios.create({
+      headers: {
+          Authorization: `Bearer ${token}`
+      }
+  });
+};
 
+export const axiosLoginAuth = () => {
   return axios.create({
     headers: {
-      Authorization: token
-    }
+      Authorization: "Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0"
+    }, baseURL: "https://simpsonsays.herokuapp.com/"
   });
 };

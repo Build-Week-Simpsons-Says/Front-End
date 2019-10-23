@@ -1,24 +1,44 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import '../styling/Login.scss'
+import { axiosLoginAuth } from '../utils/axiosWithAuth';
 
-const Login = (props) => {
-  const [loginCredentials, setLoginCredentials] = useState({
-    email: '',
-    password: ''
-  });
+class Login extends React.Component {
 
-//   const handleChange = (e) => {
-//     setLoginCredentials({
-//       ...loginCredentials,
-//       [e.target.name]: e.target.value
-//     })
-//     console.log('login creds: ', loginCredentials)
-//   }
+  state = {
+    credentials: {
+      username: '',
+      password: ''
+    }
+  }
 
+  handleChange = e => {
+    this.setState({
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value
+      }
+    })
+  }
 
+  login = e => {
+    e.preventDefault();
+    axiosLoginAuth()
+      .post(
+        "/login",
+        `grant_type=password&username=${this.state.credentials.username}&password=${this.state.credentials.password}`,
+        this.state.credentials
+      )
+      .then(res => {
+        
+        console.log(res.data);
+        localStorage.setItem("token", res.data.payload);
+        this.props.history.push("/home");
+      })
+      .catch(err => console.log(err));
+  };
 
+  render(){
   return (
     <div className="login-screen">
 
@@ -28,27 +48,27 @@ const Login = (props) => {
         
 
         {/* add on submit for form */}
-        <form  className="login-form">
+        <form className="login-form">
             <h2>Login</h2>
           <input 
-        //   onChange={handleChange}
-          className="input-email"
-          name="email"
-          type="email"
-          placeholder="Email"
-          value = {loginCredentials.email}
+          onChange={this.handleChange}
+          className="input-username"
+          name="username"
+          type="username"
+          placeholder="Username"
+          value = {this.state.credentials.username}
           required
           /> <br />
           <input 
-        //   onChange={handleChange}
+          onChange={this.handleChange}
           className="input-password"
           name="password"
           type="password"
           placeholder="Password"
-          value = {loginCredentials.password}
+          value = {this.state.credentials.password}
           required
           /> <br />
-          <button>Sign In</button>
+          <button onClick={this.login}>Sign In</button>
           <div className="register-description">
           <p>Don't have an account? Sign Up <Link to='/register'>Here</Link></p>
         </div>
@@ -59,6 +79,7 @@ const Login = (props) => {
       </div>
     </div>
   );
+  }
 }
 
 export default Login;
