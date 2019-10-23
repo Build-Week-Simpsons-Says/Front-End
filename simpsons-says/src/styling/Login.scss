@@ -10,11 +10,9 @@ body{
     background-image: url('https://img4.goodfon.com/original/1920x1080/1/2e/multfilm-shou-simpsons-personazh-20th-century-fox-art-ris-15.jpg');
 }
 
-h2{
-    font-family: 'Rock Salt', cursive;
-}
 
-h1 {
+
+.login-form-container h1 {
     font-family: 'Rock Salt', cursive;
     font-size: 3rem;
     color: #FED90F;
@@ -37,5 +35,7 @@ h1 {
     .register-description{
         margin: 10px 0;
     }
-    
+    h2{
+    font-family: 'Rock Salt', cursive;
+    }
 }
