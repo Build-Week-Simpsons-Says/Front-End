@@ -3,13 +3,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../styling/Register.scss'
 
-const Register = () => {
+const Register = (props) => {
 
     const [newUserInfo, setNewUserInfo] = useState({
-        first_name: '',
-        last_name: '',
-        email: '',
-        password: ''
+        username: '',
+        password: '',
+        primaryemail: ''
       })
 
       const handleChange = (e) => {
@@ -20,6 +19,20 @@ const Register = () => {
         console.log("new user info in handlechange", newUserInfo);
       }
 
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('https://simpsonsays.herokuapp.com/createnewuser', newUserInfo)    
+          .then(res => {
+            // localStorage.setItem('userId', res.data.id);
+            console.log("registered response", res);
+            props.history.push("/login");
+          })
+          .catch(err => {
+            console.log(err.response);
+          })
+      }
+    
+
     return (
       <div className="register-screen">
         <div className="register-form-container">
@@ -27,46 +40,38 @@ const Register = () => {
         <h1 >Simpsons Says</h1>
 
             {/* add onSubmit to form */}
-          <form  className="register-form">
+          <form  onSubmit={handleSubmit} className="register-form">
 
               <h2 className="register-form-title">Registration</h2>
               <input 
               onChange={handleChange}
-              name="first_name"
-              placeholder="First Name"
+              name="username"
+              placeholder="Username"
               type="text"  
-              value = {newUserInfo.first_name}          
+              value = {newUserInfo.username}          
               required
               /> <br />
-              <input 
-              onChange={handleChange}
-              name="last_name"
-              placeholder="Last Name"
-              type="text"   
-              value = {newUserInfo.last_name}      
-              required
-              />     
-              <br />
-              <input 
-              onChange={handleChange}
-              name="email"
-              placeholder="Email"
-              type="email"
-            //   value = 
-              required
-              /><br />
               <input 
               onChange={handleChange}
               name="password"
               placeholder="Desired Password"
               type="password"
-              value = {newUserInfo.email}
+              value = {newUserInfo.password}
+              required
+              />
+              <br />
+              <input 
+              onChange={handleChange}
+              name="primaryemail"
+              placeholder="Primary Email"
+              type="primaryemail"
+              value = {newUserInfo.primaryemail}
               required
               />
               <br />
             <button>Sign Up</button>
             <div className="login-description">
-            <p>Already have an account? Login <Link to='/'>Here</Link></p>
+            <p>Already have an account? Login <Link to='/login'>Here</Link></p>
           </div>
           </form>
          

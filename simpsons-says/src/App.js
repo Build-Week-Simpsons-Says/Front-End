@@ -26,8 +26,8 @@ function App() {
                 <Switch>
                     <Route exact path='/' component={SimpsonsWelcome} />
                     <Route path='/characterlist' component={CharacterList} />
-                    <Route exact='/login' component={Login} />
-                    <Route path ="/register" component={Register} /> 
+                    <Route path='/login' component={Login} />
+                    <Route path="/register" component={Register} /> 
                 </Switch>
             </div>
         </Router>
