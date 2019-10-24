@@ -5,6 +5,9 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import SimpsonsWelcome from "./components/SimpsonsWelcome"
 import CharacterList from "./components/CharacterList"
+import Profile from './components/Profile'
+import PrivateRoute from './components/PrivateRoute'
+import TestSearch from './components/TestSearch'
 
 function App() {
     return (
@@ -23,11 +26,15 @@ function App() {
                         </li>
                     </ul>
                 </nav>
+                <div>
+                    <TestSearch />
+                </div>
                 <Switch>
                     <Route exact path='/' component={SimpsonsWelcome} />
                     <Route path='/characterlist' component={CharacterList} />
                     <Route path='/login' component={Login} />
                     <Route path='/register' component={Register} />
+                    <PrivateRoute path='/profile' component={Profile} />
                 </Switch>
             </div>
         </Router>

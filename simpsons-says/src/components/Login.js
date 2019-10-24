@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/Login.scss'
-import { axiosWithAuth } from '../utils/axiosWithAuth';
 import axios from 'axios'
 
 class Login extends React.Component {
@@ -38,7 +37,7 @@ class Login extends React.Component {
       .then(res => {
 
         localStorage.setItem('token', res.data.access_token);
-        this.props.history.push('/');
+        this.props.history.push('/profile');
 
       })
       .catch(err => console.dir(err));
