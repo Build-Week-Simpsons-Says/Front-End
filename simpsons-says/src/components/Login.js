@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/Login.scss'
-import { axiosLoginAuth } from '../utils/axiosWithAuth';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import axios from 'axios'
 
 class Login extends React.Component {
 
@@ -22,21 +23,30 @@ class Login extends React.Component {
   }
 
   login = e => {
-    e.preventDefault();
-    axiosLoginAuth()
-      .post(
-        "/login",
-        `grant_type=password&username=${this.state.credentials.username}&password=${this.state.credentials.password}`,
-        this.state.credentials
-      )
+    
+    axios.post('https://simpsonsays.herokuapp.com/login', `grant_type=password&username=${this.state.credentials.username}&password=${this.state.credentials.password}`, {
+
+      headers: {
+
+        // btoa is converting our client id/client secret into base64
+        Authorization: `Basic ${btoa('lambda-client:lambda-secret')}`,
+        'Content-Type': 'application/x-www-form-urlencoded'
+
+      }
+
+    })
       .then(res => {
-        
-        console.log(res.data);
-        localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/home");
+
+        localStorage.setItem('token', res.data.access_token);
+        this.props.history.push('/');
+
       })
-      .catch(err => console.log(err));
-  };
+      .catch(err => console.dir(err));
+
+    e.preventDefault();
+
+  }
+
 
   render(){
   return (

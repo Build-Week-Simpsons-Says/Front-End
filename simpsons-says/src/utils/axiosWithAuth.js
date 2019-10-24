@@ -12,7 +12,7 @@ export const axiosWithAuth = ()=> {
 export const axiosLoginAuth = () => {
   return axios.create({
     headers: {
-      Authorization: "Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0"
+      Authorization: "Bearer 56ab5075-de2e-43ba-a407-e52b8f267ac7"
     }, baseURL: "https://simpsonsays.herokuapp.com/"
   });
 };
