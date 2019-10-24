@@ -29,12 +29,10 @@ function CharacterList() {
         <>
             <SearchForm handleInputChange={handleInputChange} query={query} />
             <div className='postCard-container'>
-                return (
                 <CharacterCard
                     character={data.raw_character_text}
                     quote={data.spoken_words}
                 />
-                ) })}
             </div>
         </>
     )
