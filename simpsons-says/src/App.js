@@ -10,18 +10,19 @@ import PrivateRoute from './components/PrivateRoute'
 import TestSearch from './components/TestSearch'
 import SimpsonsNav from './components/SimpsonNav'
 
+
 function App() {
     return (
         <Router>
-        
-                
+              
                 <div>
                     <SimpsonsNav />
                     <TestSearch />
                 </div>
+
                 <Switch>
                     <Route exact path='/' component={SimpsonsWelcome} />
-                    <Route path='/characterlist' component={CharacterList} />
+                    <Route path='/quotelist' component={QuoteList} />
                     <Route path='/login' component={Login} />
                     <Route path='/register' component={Register} />
                     <PrivateRoute path='/profile' component={Profile} />
