@@ -1,8 +1,8 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import "./App.scss"
-import Login from './components/Login'
-import Register from './components/Register'
+import Login from "./components/Login"
+import Register from "./components/Register"
 import SimpsonsWelcome from "./components/SimpsonsWelcome"
 import CharacterList from "./components/CharacterList"
 
@@ -27,12 +27,11 @@ function App() {
                     <Route exact path='/' component={SimpsonsWelcome} />
                     <Route path='/characterlist' component={CharacterList} />
                     <Route path='/login' component={Login} />
-                    <Route path="/register" component={Register} /> 
+                    <Route path='/register' component={Register} />
                 </Switch>
             </div>
         </Router>
     )
 }
 
-
-export default App;
+export default App

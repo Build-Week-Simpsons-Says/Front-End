@@ -9,10 +9,12 @@ function CharacterList() {
 
     useEffect(() => {
         axios
-            .get(`https://jsonplaceholder.typicode.com/posts/`)
+            .get(
+                `https://cors-anywhere.herokuapp.com/https://simpsons-quote-predictor.herokuapp.com/input?input_text=${query}`
+            )
             .then(response => {
-                setData(response.data)
                 console.log(response.data)
+                setData(response.data)
             })
             .catch(error => {
                 console.log("No GO!", error)
@@ -23,23 +25,16 @@ function CharacterList() {
         setQuery(event.target.value)
     }
 
-    // const data = response.data.filter(char => char.title.includes(query))
-
     return (
         <>
             <SearchForm handleInputChange={handleInputChange} query={query} />
             <div className='postCard-container'>
-                {data
-                    .filter(char => char.title.includes(query))
-                    .map(post => {
-                        return (
-                            <CharacterCard
-                                key={post.id}
-                                title={post.title}
-                                body={post.body}
-                            />
-                        )
-                    })}
+                return (
+                <CharacterCard
+                    character={data.raw_character_text}
+                    quote={data.spoken_words}
+                />
+                ) })}
             </div>
         </>
     )

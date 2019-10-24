@@ -5,8 +5,8 @@ function CharCard(props) {
     return (
         <div className='card-container'>
             <Card className='card'>
-                <CardTitle>{props.title}</CardTitle>
-                <CardText>{props.body}</CardText>
+                <CardTitle>{props.character}</CardTitle>
+                <CardText>{props.quote}</CardText>
             </Card>
             <Button className='save-quote' type='submit'>
                 Save Quote
