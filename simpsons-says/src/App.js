@@ -8,25 +8,15 @@ import CharacterList from "./components/CharacterList"
 import Profile from './components/Profile'
 import PrivateRoute from './components/PrivateRoute'
 import TestSearch from './components/TestSearch'
+import SimpsonsNav from './components/SimpsonNav'
 
 function App() {
     return (
         <Router>
-            <div>
-                <nav className='main-nav'>
-                    <ul>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/characterlist'>Search Quotes</Link>
-                        </li>
-                        <li>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                    </ul>
-                </nav>
+        
+                
                 <div>
+                    <SimpsonsNav />
                     <TestSearch />
                 </div>
                 <Switch>
@@ -36,7 +26,7 @@ function App() {
                     <Route path='/register' component={Register} />
                     <PrivateRoute path='/profile' component={Profile} />
                 </Switch>
-            </div>
+            
         </Router>
     )
 }
