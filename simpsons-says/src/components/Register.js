@@ -37,7 +37,6 @@ const Register = (props) => {
       <div className="register-screen">
         <div className="register-form-container">
 
-        <h1 >Simpsons Says</h1>
 
             {/* add onSubmit to form */}
           <form  onSubmit={handleSubmit} className="register-form">

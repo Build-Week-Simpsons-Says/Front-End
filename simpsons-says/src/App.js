@@ -4,29 +4,22 @@ import "./App.scss"
 import Login from "./components/Login"
 import Register from "./components/Register"
 import SimpsonsWelcome from "./components/SimpsonsWelcome"
-import QuoteList from "./components/QuoteList"
-import Profile from "./components/Profile"
-import PrivateRoute from "./components/PrivateRoute"
-import TestSearch from "./components/TestSearch"
+import CharacterList from "./components/CharacterList"
+import Profile from './components/Profile'
+import PrivateRoute from './components/PrivateRoute'
+import TestSearch from './components/TestSearch'
+import SimpsonsNav from './components/SimpsonNav'
+
 
 function App() {
     return (
         <Router>
-            <div>
-                <nav className='main-nav'>
-                    <ul>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/quotelist'>Search Quotes</Link>
-                        </li>
-                        <li>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                    </ul>
-                </nav>
-                <div></div>
+              
+                <div>
+                    <SimpsonsNav />
+                    <TestSearch />
+                </div>
+
                 <Switch>
                     <Route exact path='/' component={SimpsonsWelcome} />
                     <Route path='/quotelist' component={QuoteList} />
@@ -34,7 +27,7 @@ function App() {
                     <Route path='/register' component={Register} />
                     <PrivateRoute path='/profile' component={Profile} />
                 </Switch>
-            </div>
+            
         </Router>
     )
 }

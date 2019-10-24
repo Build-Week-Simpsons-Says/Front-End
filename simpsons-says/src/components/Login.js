@@ -52,10 +52,6 @@ class Login extends React.Component {
     <div className="login-screen">
 
       <div className="login-form-container">
-
-        <h1 className="login-form-title">Simpsons Says</h1>
-        
-
         {/* add on submit for form */}
         <form className="login-form">
             <h2>Login</h2>
