@@ -71,8 +71,8 @@ function SimpsonNav() {
                 <a href=''><img src={donuticon}/>About Us</a>
                 <NavLink to='/quotes'><img src={donuticon}/>Quotes</NavLink>
                 <NavLink to='/profile'><img src={donuticon}/>Profile</NavLink>
-                <NavLink to='/profile'><img src={donuticon}/>Login</NavLink>
-                <NavLink to='/profile'><img src={donuticon}/>Register</NavLink>
+                <NavLink to='/login'><img src={donuticon}/>Login</NavLink>
+                <NavLink to='/register'><img src={donuticon}/>Register</NavLink>
             </Links>
         </NavBar>
     )
