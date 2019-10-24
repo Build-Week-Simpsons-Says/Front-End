@@ -67,8 +67,8 @@ function SimpsonNav() {
                 </HeaderText>
             </div>
             <Links>
-                <a href='https://elated-feynman-623900.netlify.com/#'><img src={donuticon}/>Home</a>
-                <a href='https://elated-feynman-623900.netlify.com/about-us.html'><img src={donuticon}/>About Us</a>
+                <a href='https://simpsons-says.netlify.com/#'><img src={donuticon}/>Home</a>
+                <a href='https://simpsons-says.netlify.com/about-us.html'><img src={donuticon}/>About Us</a>
                 <NavLink to='/quotes'><img src={donuticon}/>Quotes</NavLink>
                 <NavLink to='/profile'><img src={donuticon}/>Profile</NavLink>
                 <NavLink to='/login'><img src={donuticon}/>Login</NavLink>
