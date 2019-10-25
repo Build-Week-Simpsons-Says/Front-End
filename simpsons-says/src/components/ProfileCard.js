@@ -7,8 +7,8 @@ const ProfileCard = props => {
         <div className='profile-container'>
             <div className='profilecard'>
             <img src={donuticon}/>
-            <h2>{props.username}</h2>
-            <h3>{props.primaryemail}</h3>
+            <h3>Username: <span className='username'>{props.username}</span></h3>
+            <h3>Email: <span>{props.primaryemail}</span></h3>
             </div>
         </div>
     )
