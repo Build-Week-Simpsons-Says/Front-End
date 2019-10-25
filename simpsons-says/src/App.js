@@ -4,27 +4,33 @@ import "./App.scss"
 import Login from "./components/Login"
 import Register from "./components/Register"
 import SimpsonsWelcome from "./components/SimpsonsWelcome"
-import QuoteList from "./components/QuoteList"
-import Profile from "./components/Profile"
-import PrivateRoute from "./components/PrivateRoute"
-import TestSearch from "./components/TestSearch"
-import SimpsonsNav from "./components/SimpsonNav"
+import Profile from './components/Profile'
+import PrivateRoute from './components/PrivateRoute'
+import TestSearch from './components/TestSearch'
+import SimpsonsNav from './components/SimpsonNav'
+import QuoteList from './components/QuoteList'
+
+
 
 function App() {
     return (
         <Router>
-            <div>
-                <SimpsonsNav />
-                {/* <TestSearch /> */}
-            </div>
 
-            <Switch>
-                <Route exact path='/' component={SimpsonsWelcome} />
-                <Route path='/quotelist' component={QuoteList} />
-                <Route path='/login' component={Login} />
-                <Route path='/register' component={Register} />
-                <PrivateRoute path='/profile' component={Profile} />
-            </Switch>
+              
+                <div>
+                    <SimpsonsNav />
+                    {/* <TestSearch /> */}
+                </div>
+
+                <Switch>
+                    <Route exact path='/' component={SimpsonsWelcome} />
+                    <Route path='/quotes' component={QuoteList} />
+                    <Route path='/login' component={Login} />
+                    <Route path='/register' component={Register} />
+                    <PrivateRoute path='/profile' component={Profile} />
+                </Switch>
+            
+
         </Router>
     )
 }
