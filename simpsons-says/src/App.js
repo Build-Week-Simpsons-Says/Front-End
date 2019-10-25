@@ -11,9 +11,11 @@ import SimpsonsNav from './components/SimpsonNav'
 import QuoteList from './components/QuoteList'
 
 
+
 function App() {
     return (
         <Router>
+
               
                 <div>
                     <SimpsonsNav />
@@ -28,6 +30,7 @@ function App() {
                     <PrivateRoute path='/profile' component={Profile} />
                 </Switch>
             
+
         </Router>
     )
 }
