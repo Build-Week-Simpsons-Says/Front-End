@@ -15,7 +15,7 @@ function App() {
         <Router>
             <div>
                 <SimpsonsNav />
-                <TestSearch />
+                {/* <TestSearch /> */}
             </div>
 
             <Switch>

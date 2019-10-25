@@ -11,6 +11,7 @@ const WrapperDiv = styled.div`
     padding-top: 30px;
     height: 300px;
     width: 300px;
+    font-size: 18px;
 `
 
 function QuoteList() {
@@ -29,7 +30,7 @@ function QuoteList() {
             )
             .then(res => setQuote(res.data))
 
-            .catch(err => console.log("WTF", err))
+            .catch(err => console.log("no go!", err))
     }
 
     return (
@@ -38,7 +39,7 @@ function QuoteList() {
                 <input
                     onChange={handleChange}
                     name='quote'
-                    placeholder='Use keywords to search for a quote'
+                    placeholder='Use keywords to search'
                     type='text'
                     value={searchedQuote}
                 />
