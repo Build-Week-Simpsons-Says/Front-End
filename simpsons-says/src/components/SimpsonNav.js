@@ -72,7 +72,7 @@ function SimpsonNav() {
                     <img src={donuticon} />
                     About Us
                 </a>
-                <NavLink to='/quotelist'>
+                <NavLink to='/quotes'>
                     <img src={donuticon} />
                     Quotes
                 </NavLink>

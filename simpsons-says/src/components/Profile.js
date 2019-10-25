@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ProfileCard from "./ProfileCard"
-import QuoteList from "./QuoteList"
+import TestSearch from './TestSearch'
 import axios from "axios"
 
 const Profile = () => {
@@ -21,12 +21,13 @@ const Profile = () => {
 
     return (
         <>
-            <QuoteList />
+            
             <div>
                 <ProfileCard
                     username={userInfo.username}
                     primaryemail={userInfo.primaryemail}
                 />
+                <TestSearch />
             </div>
         </>
     )
