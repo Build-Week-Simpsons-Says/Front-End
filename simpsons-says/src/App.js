@@ -27,7 +27,7 @@ function App() {
                     <Route path='/quotes' component={QuoteList} />
                     <Route path='/login' component={Login} />
                     <Route path='/register' component={Register} />
-                    <PrivateRoute path='/profile' component={Profile} />
+                    <PrivateRoute exact path='/profile' component={Profile} />
                 </Switch>
             
 

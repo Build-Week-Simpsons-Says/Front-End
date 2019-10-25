@@ -1,14 +1,15 @@
 import React, { useState } from "react"
-import QuoteList from "./QuoteList"
+import '../styling/Quote.scss'
 
 function QuoteCard(props) {
     return (
-        <form>
-            <h4>{props.spoken_words}</h4>
-            <p>{props.raw_character_text}</p>
-            <button>Save Quote</button>
-        </form>
+        <div className='quote-container'>
+            <h2>Quotes</h2>
+            <h3>{props.spoken_words}</h3>
+            <h4>{props.raw_character_text}</h4>
+            {/* <button>Save Quote</button> */}
+        </div>
     )
 }
 
-export default QuoteCard
+export default QuoteCard;
