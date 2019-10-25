@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
+import QuoteList from "./QuoteList"
 
 function QuoteCard(props) {
-    console.log(props, "quote-card")
     return (
         <form>
             <h4>{props.spoken_words}</h4>
